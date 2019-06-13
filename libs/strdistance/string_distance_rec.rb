@@ -14,9 +14,9 @@ class StringDistanceRec
       replace_cost = @str_A[a - 1] == @str_B[b - 1] ? 0 : 1
 
       cost_delete = distance(a - 1, b) + 1
-      cost_ins = distance(a, b - 1) + 1
+      cost_insert = distance(a, b - 1) + 1
       cost_replace = distance(a - 1, b - 1) + replace_cost
-      [cost_delete, cost_ins, cost_replace].min
+      [cost_delete, cost_insert, cost_replace].min
     end
   end
 end
