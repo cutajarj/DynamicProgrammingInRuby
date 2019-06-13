@@ -1,11 +1,11 @@
 class StringDistanceTopDown
-  def initialize(strA, strB)
-    @strA = strA
-    @strB = strB
-    @dist = Array.new(@strA.length + 1) {Array.new(@strB.length + 1, -1)}
+  def initialize(str_A, str_B)
+    @str_A = str_A
+    @str_B = str_B
+    @dist = Array.new(@str_A.length + 1) {Array.new(@str_B.length + 1, -1)}
   end
 
-  def distance(a = @strA.length, b = @strB.length)
+  def distance(a = @str_A.length, b = @str_B.length)
     case
     when @dist[a][b] != -1
       @dist[a][b]
@@ -14,7 +14,7 @@ class StringDistanceTopDown
     when b == 0
       a
     else
-      replace_cost = @strA[a - 1] == @strB[b - 1] ? 0 : 1
+      replace_cost = @str_A[a - 1] == @str_B[b - 1] ? 0 : 1
 
       cost_delete = distance(a - 1, b) + 1
       cost_ins = distance(a, b - 1) + 1
@@ -26,7 +26,7 @@ class StringDistanceTopDown
   end
 end
 
-sDist = StringDistanceTopDown.new("TodayIsSaturday", "TomorrowIsSunday")
-#sDist = StringDistanceTopDown.new("Saturday", "Sundays")
+#sDist = StringDistanceTopDown.new("TodayIsSaturday", "TomorrowIsSunday")
+sDist = StringDistanceTopDown.new("Saturday", "Sundays")
 puts(sDist.distance)
 
