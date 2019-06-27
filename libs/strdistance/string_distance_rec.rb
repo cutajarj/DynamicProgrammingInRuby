@@ -1,17 +1,17 @@
 class StringDistanceRec
-  def initialize(strA, strB)
-    @str_A = strA
-    @str_B = strB
+  def initialize(str_a, str_b)
+    @str_a = str_a
+    @str_b = str_b
   end
 
-  def distance(a = @str_A.length, b = @str_B.length)
+  def distance(a = @str_a.length, b = @str_b.length)
     case
     when a == 0
       b
     when b == 0
       a
     else
-      replace_cost = @str_A[a - 1] == @str_B[b - 1] ? 0 : 1
+      replace_cost = @str_a[a - 1] == @str_b[b - 1] ? 0 : 1
 
       cost_delete = distance(a - 1, b) + 1
       cost_insert = distance(a, b - 1) + 1
@@ -21,6 +21,6 @@ class StringDistanceRec
   end
 end
 
-#sDist = StringDistanceTopDown.new("TodayIsSaturday", "TomorrowIsSunday")
+#sDist = StringDistanceRec.new("TodayIsSaturday", "TomorrowIsSunday")
 sDist = StringDistanceRec.new("Saturday", "Sundays")
 puts(sDist.distance)
