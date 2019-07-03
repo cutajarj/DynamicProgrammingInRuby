@@ -10,9 +10,9 @@ class AircraftSpacingTopDown
     elsif @sub_solutions[i] != -1
       @sub_solutions[i]
     else
-      choosing_fist = @passengers[i] + max_passengers(i + 2)
-      not_choosing_fist = max_passengers(i + 1)
-      max_pass = [choosing_fist, not_choosing_fist].max
+      choosing_first = @passengers[i] + max_passengers(i + 2)
+      not_choosing_first = max_passengers(i + 1)
+      max_pass = [choosing_first, not_choosing_first].max
       @sub_solutions[i] = max_pass
       max_pass
     end

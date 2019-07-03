@@ -3,13 +3,13 @@ class AircraftSpacingBottomUp
     @passengers = passengers
     @sub_solutions = Array.new(passengers.length, -1)
     for i in (@passengers.length - 1).downto(0)
-      choosing_first = passengers[i] + (i + 2 < @sub_solutions.length ? @sub_solutions[i + 2] : 0)
+      choosing_first = @passengers[i] + (i + 2 < @sub_solutions.length ? @sub_solutions[i + 2] : 0)
       not_choosing_first = i + 1 < @sub_solutions.length ? @sub_solutions[i + 1] : 0
       @sub_solutions[i] = [choosing_first, not_choosing_first].max
     end
   end
 
-  def max_passengers()
+  def max_passengers
     @sub_solutions[0]
   end
 end
