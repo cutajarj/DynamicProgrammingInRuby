@@ -7,9 +7,9 @@ class AircraftSpacingRec
     if i >= @passengers.length
       0
     else
-      choosing_fist = @passengers[i] + max_passengers(i + 2)
-      not_choosing_fist = max_passengers(i + 1)
-      [choosing_fist, not_choosing_fist].max
+      choosing_first = @passengers[i] + max_passengers(i + 2)
+      not_choosing_first = max_passengers(i + 1)
+      [choosing_first, not_choosing_first].max
     end
   end
 end
