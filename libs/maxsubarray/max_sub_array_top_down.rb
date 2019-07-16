@@ -1,7 +1,7 @@
 class MaxSubArrayTopDown
   def initialize(prices)
     @prices = prices
-    @sub_problems = Array.new(prices.length, -1)
+    @sub_problems = Array.new(prices.length, nil)
   end
 
   def max_sub_array()
@@ -13,7 +13,7 @@ class MaxSubArrayTopDown
   end
 
   def max_sub_array_ending_at(i)
-    if @sub_problems[i] != -1
+    if @sub_problems[i] != nil
       @sub_problems[i]
     elsif i == 0
       @prices[0]

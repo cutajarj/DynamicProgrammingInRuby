@@ -1,7 +1,7 @@
 class MaxSubArrayBottomUp
   def initialize(prices)
     @prices = prices
-    @sub_problems = Array.new(prices.length, -1)
+    @sub_problems = Array.new(prices.length)
     for i in 0..@prices.length - 1
       @sub_problems[i] = if i == 0
                           @prices[0]
