@@ -1,20 +1,20 @@
 class MaxSubArrayBottomUp
   def initialize(prices)
     @prices = prices
-    @sub_problems = Array.new(prices.length)
-    for i in 0..@prices.length - 1
-      @sub_problems[i] = if i == 0
-                          @prices[0]
-                        else
-                          [@prices[i], @sub_problems[i - 1] + @prices[i]].max
-                        end
+    @sub_solutions = Array.new(prices.length)
+    for i in 0..prices.length - 1
+      @sub_solutions[i] = if i == 0
+                            @prices[0]
+                          else
+                            [@prices[i], @sub_solutions[i - 1] + @prices[i]].max
+                          end
     end
   end
 
   def max_sub_array()
     max_value = 0
     for j in 0..@prices.length - 1
-      max_value = [max_value, @sub_problems[j]].max
+      max_value = [max_value, @sub_solutions[j]].max
     end
     max_value
   end
