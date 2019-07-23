@@ -22,5 +22,5 @@ end
 #for i in 1..64
 for i in 1..10
   n = CountDerangementsTopDown.new(i).count_derangements
-  puts ("Derangments in set size %d -> %d" % [i, n])
+  puts("Derangments in set size %d -> %d" % [i, n])
 end
