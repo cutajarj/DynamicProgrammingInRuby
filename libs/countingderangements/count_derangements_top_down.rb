@@ -4,17 +4,17 @@ class CountDerangementsTopDown
     @sub_solutions = Array.new(set_size + 1, -1)
   end
 
-  def count_derangements(i = @set_size)
-    if @sub_solutions[i] != -1
-      @sub_solutions[i]
-    elsif i == 1
+  def count_derangements(n = @set_size)
+    if @sub_solutions[n] != -1
+      @sub_solutions[n]
+    elsif n == 1
       0
-    elsif i == 2
+    elsif n == 2
       1
     else
-      n = (i - 1) * (count_derangements(i - 1) + count_derangements(i - 2))
-      @sub_solutions[i] = n
-      n
+      result = (n - 1) * (count_derangements(n - 1) + count_derangements(n - 2))
+      @sub_solutions[n] = result
+      result
     end
   end
 end

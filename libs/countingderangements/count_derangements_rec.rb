@@ -3,21 +3,21 @@ class CountDerangementsRec
     @set_size = set_size
   end
 
-  def count_derangements(i = @set_size)
-    if i == 1
+  def count_derangements(n = @set_size)
+    if n == 1
       0
-    elsif i == 2
+    elsif n == 2
       1
     else
-      (i - 1) * (count_derangements(i - 1) + count_derangements(i - 2))
+      (n - 1) * (count_derangements(n - 1) + count_derangements(n - 2))
     end
   end
 end
 
-for i in 1..64
-#for i in 1..10
-  n = CountDerangementsRec.new(i).count_derangements
-  puts("Derangments in set size %d -> %d" % [i, n])
+#for i in 1..64
+for i in 1..10
+  result = CountDerangementsRec.new(i).count_derangements
+  puts("Derangements in set size %d -> %d" % [i, result])
 end
 
 
