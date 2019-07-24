@@ -9,7 +9,7 @@ class CountDerangementsBottomUp
         @sub_solutions[i] = 1
       else
         @sub_solutions[i] = (i - 1) * (@sub_solutions[i - 1] + @sub_solutions[i - 2])
-        end
+      end
     end
   end
 
