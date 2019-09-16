@@ -4,7 +4,7 @@ Dynamic programming problems and solutions in Ruby
 
 The udemy course for this repo can be found at:
 
-TODO (Still working on it)
+https://www.udemy.com/course/dynamic-programming-ruby/?couponCode=KWLQJY_GIT
 
 Please do get in touch if you find any suggestions/improvements!
 
